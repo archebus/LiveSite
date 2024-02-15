@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archebus - Some code snippets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+
+    <!-- Include Raleway font from Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+
+    <style>	
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+        }
+		
+        .portfolio-box {
+            font-family: 'Raleway', sans-serif;
+            width: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            border-radius: 15px;
+			margin: 40px 10px;
+        }
+
+        .photo {
+            border-radius: 50%;
+            max-width: 250px; /* Set the maximum width to 250px */
+            height: auto;
+        }
+
+        .hobbies,
+        .contact {
+            margin-top: 20px;
+        }
+		
+		.logo {
+            max-width: 150px;
+            height: auto;
+			margin: 20px 0;
+        }
+		
+		header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white; /* Added text color */
+        }
+		
+		header img {
+            max-width: 100%;
+            height: auto;
+        }
+		
+		.menu {
+            background-color: #666;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            width: 100%; /* Full width */
+        }
+
+		.menu a {
+			color: white;
+			text-decoration: none;
+			padding: 10px;
+			margin: 0 10px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+			cursor: pointer; /* Add this to ensure the pointer cursor on hover */
+		}
+
+        .menu a:hover {
+            background-color: #999; !important;
+        }
+
+        .portfolio-container {
+            display: flex; /* Use flexbox for the container */
+            justify-content: space-around; /* Adjust as needed */
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- Logo Section -->
+        <img src="cat_logo.png" alt="The Logo of my dumb company" class="logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="menu">
+        <a href="codefun.html">Code Fun</a>
+        <a href="portfolio.html">About Me</a>
+    </div>
+
+    <div class="portfolio-container">
+        <div class ="portfolio-box">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+            <h3>C# Calculating Animation:</h3>
+            <pre>
+                <code class="language-csharp">
+static void FakeCalculate()
+{
+    Console.Write(" Calculating");
+    for (int i = 0; i < 6; i++)
+    {
+        Console.Write(".");
+        Thread.Sleep(150);
+        Console.Write(".");
+        Thread.Sleep(150);
+        Console.Write(".");
+        Thread.Sleep(150);
+        Console.Write("\b\b\b");
+        Console.Write("   ");
+        Console.Write("\b\b\b");
+        Thread.Sleep(150);
+    }
+    Console.Write(" [Done]");
+    Console.WriteLine();
+}
+                </code>
+            </pre>
+        </div>    
+
+        <div class ="portfolio-box">
+                <h3>C# Crazy Print Animation</h3>
+                <pre>
+                    <code class="language-csharp">
+static void CrazyPrint(string stringToPrint)
+{
+    char[] characters = stringToPrint.ToCharArray();
+    int stringLength = stringToPrint.Length;
+    Random rnd = new Random();
+
+    for (int i = 0; i < stringLength; i++)
+    {
+        int ranSleep = rnd.Next(20, 70);
+        for (int j = 0; j < 10; j++)
+        {
+            Console.Write(RandomChar(rnd));
+            Thread.Sleep(ranSleep);
+            Console.Write("\b");
+        }
+        Console.Write($"{characters[i]}");
+    }
+
+    static char RandomChar(Random rnd)
+    {
+        int ranChar = rnd.Next(97, 123);
+        return (char)ranChar;
+    }
+}
+                    </code>
+                </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>
